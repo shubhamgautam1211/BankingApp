@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class user extends AppCompatActivity {
 
     TextView text1,text2,text3,text4,text5,text6,text7,text8,text9,text10;
-    String Name;
+    String Name,datatrans;
+    ImageView transac;
+    ImageView back_pressed;
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10;
 
 
@@ -53,6 +56,27 @@ public class user extends AppCompatActivity {
         Button button10 = findViewById(R.id.button10);
         TextView text10 = findViewById(R.id.text10);
 
+        ImageView transac = findViewById(R.id.transac);
+        ImageView back_pressed = findViewById(R.id.back_pressed);
+
+
+        transac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(user.this,transaction_history.class);
+                intent.putExtra("datatrans",datatrans);
+                startActivity(intent);
+            }
+        });
+
+        back_pressed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(user.this,Home.class);
+                startActivity(intent);
+
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +89,8 @@ public class user extends AppCompatActivity {
 
             }
         });
+
+
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override

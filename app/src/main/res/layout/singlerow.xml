@@ -12,10 +12,10 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="5dp"
         android:background="#f2f2f2"
-        app:cardBackgroundColor="#f2f2f2"
+        app:cardBackgroundColor="@color/red_but"
         app:cardCornerRadius="30dp">
 
 
@@ -31,7 +31,8 @@
                 android:layout_marginLeft="20dp"
 
                 android:layout_marginTop="35dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp">
 
                 <TextView
                     android:id="@+id/name11"
@@ -41,7 +42,8 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="0dp"
                     android:text="Paid To: "
-                    android:textColor="#000000"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#ffffff"
                     android:textSize="27sp"
                     android:layout_marginStart="0dp"
                     android:paddingStart="5dp"
@@ -56,7 +58,8 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="0dp"
                     android:text="M"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/roboto_bold"
                     android:textSize="27sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +75,9 @@
                     android:layout_width="wrap_content"
 
                     android:layout_height="match_parent"
-                    android:text="RS -"
-                    android:textColor="#000000"
+                    android:text="Rs /-"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#ffffff"
                     android:textSize="27sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.703"
@@ -83,11 +87,11 @@
                 <TextView
                     android:id="@+id/amount"
                     android:layout_width="wrap_content"
-
                     android:layout_height="match_parent"
                     android:layout_marginStart="70dp"
                     android:text="Mojos Cafe"
-                    android:textColor="#000000"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#ffffff"
                     android:textSize="27sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.822"

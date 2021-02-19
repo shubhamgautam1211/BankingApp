@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,6 +21,7 @@
             android:layout_height="?actionBarSize">
 
             <ImageView
+                android:id="@+id/back_pressed"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:clickable="true"
@@ -38,6 +39,7 @@
                 android:contentDescription="TODO" />
 
             <ImageView
+                android:id="@+id/transac"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:clickable="true"
@@ -66,7 +68,10 @@
 
 
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -610,6 +615,8 @@
 
     </LinearLayout>
 
+</ScrollView>
+
 
 
 
@@ -621,4 +628,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>

@@ -22,8 +22,9 @@ import java.util.jar.Attributes;
 
 public class details extends AppCompatActivity {
     String userdata;
-    String data,data1,data2,data3,data4,data5;
+    String data,data1,data2,data3,data4,data5,data6;
     String Name;
+    TextView refresh2;
     TextView username,balance,userphonenumber,email,account_no,ifsc_code;
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -42,6 +43,7 @@ public class details extends AppCompatActivity {
         TextView email = findViewById(R.id.email);
         TextView balance = findViewById(R.id.balance);
         TextView ifsc_code = findViewById(R.id.ifsc_code);
+        TextView refresh2 = findViewById(R.id.refresh2);
         Button pay_button = findViewById(R.id.transfer_button);
 
         Name = getIntent().getStringExtra("Name");
@@ -64,6 +66,25 @@ public class details extends AppCompatActivity {
 
             }
         });
+
+        refresh2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ref.child(userdata).child("Current Balance").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        data6 = dataSnapshot.getValue(String.class);
+                        balance.setText(String.valueOf(data6));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
 
         ref.child(Name).child("Current Balance").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
